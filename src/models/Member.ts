@@ -1,5 +1,5 @@
 export interface Member{
-    id:number,
+    id:string,
     cin:string,
     firstName:string,
     lastName:String,

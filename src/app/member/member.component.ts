@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Member } from 'src/models/Member';
@@ -10,7 +10,7 @@ import { MemberService } from 'src/service/member.service';
   styleUrls: ['./member.component.css'],
 
 })
-export class MemberComponent {
+export class MemberComponent implements OnInit {
   dataSource:Member[]=[];
   constructor(private mS:MemberService,private router:Router){}
   ngOnInit():void{
@@ -23,10 +23,12 @@ export class MemberComponent {
     })
   }
 displayedColumns: string[] = ['id', 'cin', 'firstName', 'lastName','type','col'];
-delete(id: number): void {
-  this.mS.DeleteMember(id).subscribe(() => {
-    this.dataSource = this.dataSource.filter(member => member.id !== id);
-  });
+delete(id: string): void {
+  this.mS.DeleteMember(id).subscribe(
+    response=>
+      this.ngOnInit(),
+    
+  );
 }
 
 

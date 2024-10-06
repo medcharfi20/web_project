@@ -16,8 +16,14 @@ export class MemberService {
     return this.http.post<void>("http://localhost:3000/member",MembertoSave)
 
   }
-  DeleteMember(id: number): Observable<void> {
-    return this.http.delete<void>(`http://localhost:3000/member/${id}`);
+  DeleteMember(id:string): Observable<void> {
+    return this.http.delete<void>('http://localhost:3000/member/'+id);
   }
-  
+ getMemberById(id:string):Observable<Member>{
+  return this.http.get<Member>('http://localhost:3000/member/'+id);
+ }
+ updateMemberbyId(id:string,newMember:Member):Observable<void>{
+  return this.http.put<void>('http://localhost:3000/member/'+id,newMember)
+
+ } 
 }

@@ -12,16 +12,41 @@ import { HttpClientModule } from '@angular/common/http';
 import { MemberFormComponent } from './member-form/member-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
+import { TemplateComponent } from './template/template.component'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToolsComponent } from './tools/tools.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { EventsComponent } from './events/events.component';
+import { FirebaseModule } from './Firebase.module (2) (2)';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
     MemberComponent,
-    MemberFormComponent
+    MemberFormComponent,
+    TemplateComponent,
+    DashboardComponent,
+    ToolsComponent,
+    ArticlesComponent,
+    EventsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatCardModule,
+    FirebaseModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
     MatInputModule,
     ReactiveFormsModule,
     AppRoutingModule,
